@@ -11,3 +11,10 @@ for (let i = 0; i < 16; i++) {
     }
     container.appendChild(row);
 }
+
+function changeBackground(e){
+    this.classList.add('hover');
+}
+
+const squares = document.querySelectorAll('.item');
+squares.forEach(square => square.addEventListener('mouseenter', changeBackground));

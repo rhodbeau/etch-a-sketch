@@ -23,8 +23,12 @@ body {
 
 .item {
     background-color: whitesmoke;
-    width: 28px;
+    width: auto;
     height: auto;
     flex: 1 1 auto;
+}
+
+.hover {
+    background-color: blueviolet;
 }
 
