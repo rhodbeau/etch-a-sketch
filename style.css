@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 500px;
+}
+
+.row {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    flex: 1 1 auto;
+}
+
+.item {
+    background-color: whitesmoke;
+    width: 28px;
+    height: auto;
+    flex: 1 1 auto;
+}
+
