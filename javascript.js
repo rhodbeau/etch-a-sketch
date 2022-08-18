@@ -18,3 +18,11 @@ function changeBackground(e){
 
 const squares = document.querySelectorAll('.item');
 squares.forEach(square => square.addEventListener('mouseenter', changeBackground));
+
+const clear = document.getElementById('clear');
+
+function clearGrid(e){
+    squares.forEach(square => square.classList.remove('hover'));
+}
+
+clear.addEventListener('click', clearGrid);

@@ -9,6 +9,8 @@ body {
     flex-direction: column;
     height: 500px;
     width: 500px;
+    justify-content: center;
+    align-items: center;
 }
 
 .row {
@@ -32,3 +34,9 @@ body {
     background-color: blueviolet;
 }
 
+button {
+    background-color: whitesmoke;
+    width: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+}
