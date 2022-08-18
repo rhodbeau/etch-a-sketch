@@ -1,28 +1,48 @@
 const container = document.querySelector(".container");
+let size = 16;
 
-for (let i = 0; i < 16; i++) {
-    let row = document.createElement("div");
-    row.classList.add("row");
-    for (let j = 0; j < 16; j++) {
-        let div = document.createElement("div");
-        div.classList.add('item');
-        div.setAttribute('style', 'border-color: black; border-width: thin; border-style: solid;');
-        row.appendChild(div);
+function createGrid(size) {
+    for (let i = 0; i < size; i++) {
+        let row = document.createElement("div");
+        row.classList.add("row");
+        for (let j = 0; j < size; j++) {
+            let div = document.createElement("div");
+            div.classList.add('item');
+            row.appendChild(div);
+        }
+        container.appendChild(row);
     }
-    container.appendChild(row);
+
+    const squares = document.querySelectorAll('.item');
+    squares.forEach(square => square.addEventListener('mouseenter', changeBackground));
 }
+
+
+function clearGrid(e){
+    const squares = document.querySelectorAll('.item');
+    squares.forEach(square => square.classList.remove('hover'));
+}
+const clear = document.getElementById('clear');
+clear.addEventListener('click', clearGrid);
+
+
+function createNewGrid(e){
+    do {
+        size = prompt("Enter new size of grid");
+    }
+    while (size > 100);
+
+    let deleteRows = document.querySelectorAll('.row');
+    deleteRows.forEach(deleteRow => container.removeChild(deleteRow));
+
+    createGrid(size);
+}
+const newGrid = document.getElementById('newGrid');
+newGrid.addEventListener('click', createNewGrid);
+
 
 function changeBackground(e){
     this.classList.add('hover');
 }
 
-const squares = document.querySelectorAll('.item');
-squares.forEach(square => square.addEventListener('mouseenter', changeBackground));
-
-const clear = document.getElementById('clear');
-
-function clearGrid(e){
-    squares.forEach(square => square.classList.remove('hover'));
-}
-
-clear.addEventListener('click', clearGrid);
+createGrid(size);
