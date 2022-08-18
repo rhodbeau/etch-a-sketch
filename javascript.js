@@ -20,7 +20,8 @@ function createGrid(size) {
 
 function clearGrid(e){
     const squares = document.querySelectorAll('.item');
-    squares.forEach(square => square.classList.remove('hover'));
+    //squares.forEach(square => square.classList.remove('hover'));
+    squares.forEach(square => square.setAttribute('style', 'background-color: whitesmoke'));
 }
 const clear = document.getElementById('clear');
 clear.addEventListener('click', clearGrid);
@@ -41,8 +42,19 @@ const newGrid = document.getElementById('newGrid');
 newGrid.addEventListener('click', createNewGrid);
 
 
-function changeBackground(e){
+function changeBackground(e) {
     this.classList.add('hover');
+
+    let r = randomColorNumber();
+    let g = randomColorNumber();
+    let b = randomColorNumber();
+
+    this.setAttribute('style', `background-color: rgb(${r}, ${g}, ${b})`);
+}
+
+
+function randomColorNumber() {
+    return Math.floor(Math.random() * 256);
 }
 
 createGrid(size);
